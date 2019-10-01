@@ -36,7 +36,7 @@ app.layout = html.Div(children=[
                         {'label':list_of_breakfast[2], 'value':list_of_breakfast[2]},
                         ],
 #this is the default value
-                value='choose',
+                value='yogurt',
                 ),
         ],className='two columns'),
         html.Div([
