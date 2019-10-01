@@ -29,7 +29,7 @@ app.layout = html.Div(children=[
     html.Div([
         html.Div([
             dcc.RadioItems(
-                id='pick-a-color',
+                id='pick-a-breakfast',
                 options=[
                         {'label':list_of_breakfast[0], 'value':list_of_breakfast[0]},
                         {'label':list_of_breakfast[1], 'value':list_of_breakfast[1]},
