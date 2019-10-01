@@ -6,8 +6,8 @@ from dash.dependencies import Input, Output, State
 
 ########### Define your variables ######
 
-myheading1='How to use callbacks with multiple inputs'
-tabtitle = 'lightsabers!'
+myheading1='Pick breakfast'
+tabtitle = 'brekkie!'
 list_of_breakfast=['yogurt', 'donuts', 'cereal']
 list_of_numbers=['one', 'two', 'three']
 sourceurl = 'https://dash.plot.ly/getting-started-part-2'
@@ -64,10 +64,10 @@ app.layout = html.Div(children=[
 ########## Define Callback
 
 @app.callback(Output('your_output_here', 'children'),
-              [Input('pick-a-cereal', 'value'),
+              [Input('pick-a-breakfast', 'value'),
                Input('pick-a-number', 'value')])
-def radio_results(cereal_you_picked, number_you_picked):
-    image_you_chose=f'{cereal_you_picked}-{number_you_picked}.jpg'
+def radio_results(breakfast_you_picked, number_you_picked):
+    image_you_chose=f'{breakfast_you_picked}-{number_you_picked}.jpg'
     return html.Img(src=app.get_asset_url(image_you_chose), style={'width': 'auto', 'height': 'auto'}),
 
 ############ Deploy
