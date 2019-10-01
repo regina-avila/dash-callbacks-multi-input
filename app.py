@@ -8,10 +8,10 @@ from dash.dependencies import Input, Output, State
 
 myheading1='How to use callbacks with multiple inputs'
 tabtitle = 'lightsabers!'
-list_of_colors=['red', 'green', 'blue']
+list_of_breakfast=['yogurt', 'donuts', 'cereal']
 list_of_numbers=['one', 'two', 'three']
 sourceurl = 'https://dash.plot.ly/getting-started-part-2'
-githublink = 'https://github.com/austinlasseter/dash-callbacks-multi-input'
+githublink = 'https://github.com/regina-avila/dash-callbacks-multi-input'
 
 
 ########## Set up the chart
@@ -31,10 +31,11 @@ app.layout = html.Div(children=[
             dcc.RadioItems(
                 id='pick-a-color',
                 options=[
-                        {'label':list_of_colors[0], 'value':list_of_colors[0]},
-                        {'label':list_of_colors[1], 'value':list_of_colors[1]},
-                        {'label':list_of_colors[2], 'value':list_of_colors[2]},
+                        {'label':list_of_breakfast[0], 'value':list_of_breakfast[0]},
+                        {'label':list_of_breakfast[1], 'value':list_of_breakfast[1]},
+                        {'label':list_of_breakfast[2], 'value':list_of_breakfast[2]},
                         ],
+#this is the default value
                 value='choose',
                 ),
         ],className='two columns'),
@@ -63,10 +64,10 @@ app.layout = html.Div(children=[
 ########## Define Callback
 
 @app.callback(Output('your_output_here', 'children'),
-              [Input('pick-a-color', 'value'),
+              [Input('pick-a-cereal', 'value'),
                Input('pick-a-number', 'value')])
-def radio_results(color_you_picked, number_you_picked):
-    image_you_chose=f'{color_you_picked}-{number_you_picked}.jpg'
+def radio_results(cereal_you_picked, number_you_picked):
+    image_you_chose=f'{cereal_you_picked}-{number_you_picked}.jpg'
     return html.Img(src=app.get_asset_url(image_you_chose), style={'width': 'auto', 'height': 'auto'}),
 
 ############ Deploy
